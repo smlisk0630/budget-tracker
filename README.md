@@ -2,7 +2,7 @@
 ![License: MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Issues](https://img.shields.io/github/issues/smlisk0630/budget-tracker)
 ![Forks](https://img.shields.io/github/forks/smlisk0630/budget-tracker)
-![GitHub Top Language](https://img.shields.io/github/languages/top/smlisk0630/)
+![GitHub Top Language](https://img.shields.io/github/languages/top/smlisk0630/budget-tracker)
 ## Description
 Application enables users to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they populate the total when brought back online.
 ## Link to Deployed Application
