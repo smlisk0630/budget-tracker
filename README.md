@@ -18,7 +18,7 @@ This application can be found at https://smlisk0630.github.io/budget-tracker/.
 npm install budget-tracker
 ```
 ## User Stories
-[placeholder]
+![Budget Tracker Video](/public/assets/budget-tracker.gif)
 ## Usage
 Can be used to view, track, and log exercises and budgets.
 ## Dependencies
