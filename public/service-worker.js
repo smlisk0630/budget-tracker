@@ -63,9 +63,13 @@ self.addEventListener("fetch", function (event) {
   }
 
   event.respondWith(
-    caches.open(CACHE_NAME).then((cache) => {
+    fetch(event.request).catch(function() {      
       return cache.match(event.request).then((response) => {
-        return response || fetch(event.request);
+        if(response) {
+          return response;
+        } else if(event.request.headers.get("accept").includes("text/html")) {
+          return caches.match("/")
+        }
       });
     })
   );
