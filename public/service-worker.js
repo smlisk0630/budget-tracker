@@ -21,21 +21,21 @@ self.addEventListener("install", function (event) {
   );
 });
 
-// Activate service worker and remove old data from cache
-self.addEventListener("activate", function (event) {
-  event.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(
-        keyList.map((key) => {
-          if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-            console.log("Removing old cache data", key);
-            return caches.delete(key);
-          }
-        })
-      );
-    })
-  );
-});
+// // Activate service worker and remove old data from cache
+// self.addEventListener("activate", function (event) {
+//   event.waitUntil(
+//     caches.keys().then((keyList) => {
+//       return Promise.all(
+//         keyList.map((key) => {
+//           if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+//             console.log("Removing old cache data", key);
+//             return caches.delete(key);
+//           }
+//         })
+//       );
+//     })
+//   );
+// });
 
 // Enable service worker to intercept network requests
 self.addEventListener("fetch", function (event) {
@@ -64,7 +64,7 @@ self.addEventListener("fetch", function (event) {
 
   event.respondWith(
     fetch(event.request).catch(function() {      
-      return cache.match(event.request).then((response) => {
+      return caches.match(event.request).then((response) => {
         if(response) {
           return response;
         } else if(event.request.headers.get("accept").includes("text/html")) {
